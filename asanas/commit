@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo 0 > timer.current
+echo `date -u +"%D %T %Z %s"` > datetime.current
+git add -A
+git commit -m "auto `date -u +"%D %T %Z %s"` `cat goal.current`"
+git push
+clear 

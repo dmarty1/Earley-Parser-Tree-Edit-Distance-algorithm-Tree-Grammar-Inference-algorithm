@@ -1,0 +1,22 @@
+,,,
+bool,Is it an empty context or not,,
+Len ,Length of context - i.e. number of elements in context ,,
+call,1 parameter: returns value for that key designated by parameter,Multiple parameters: creates and returns a new context that groups together the keys (designated by the parameters) and their values under one value in the context ,"icont = context(“a"",""b"",""c"",""d"")
+icont.__call__(1,2,3)
+=> {0: {1: 'b', 2: 'c', 3: 'd'}}"
+Contains,True if there is a key with parameter’s value else false,,
+__delattr__,"Removes key from dictionary if key exists else does nothing, either way returns nothing",,
+__delitem__,Calls on delattr so does the same thing ?,,
+__iadd__,"Calls on extend, takes in another context as a parameter and overrides values for matching keys in the original context","Context1 = context(""a"",""b"",""c"",""d"")
+Context2 = context(“e"",""f"")
+","context1.__iadd__(context2) => {0: e, 1: f, 2:c, 3:d}"
+__init__,"Take in any number of parameters, each parameter is a value and it inserts them each at a different key going down the line, overriding existing values ",,
+__iter__,Iterates through all the values in the main dictionary ,,
+__getattr__,creates a new key with the parameter used as key name if the key name does not already exist  ,D[‘a’] = D.a ,
+__getitem__,same thing as getattr,,
+__nonzero__,"Check if context is empty or not, returns true if length is greater than 0",,
+__repr__,returns a readable representation of context ,,
+__setattr__,"Takes in two parameter (k, v) sets value v at key k and returns nothing ",D[‘a’] = D.a ,
+__setitem__,Same thing as setattr but is done in a different way,,
+keys,Returns all the keys of the dictionary d (main dictionary),,
+Values,Returns all the values of the dictionary d (main dictionary),,

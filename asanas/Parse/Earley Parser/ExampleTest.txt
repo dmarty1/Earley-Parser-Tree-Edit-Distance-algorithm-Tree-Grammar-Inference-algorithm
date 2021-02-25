@@ -1,0 +1,712 @@
+
+Example 0
+grammar 
+	0 
+		^
+		S
+	1 
+		S
+		AB
+	2
+		A
+		a
+	3
+		B
+		b
+
+words 
+	ab
+lexicon
+
+
+Example 1
+grammar
+	0
+		^ 
+		S 
+	1
+		S
+		'class'V
+	2
+		V
+		CV
+	3
+		V 
+		#
+	4
+		C
+		a
+
+words
+	classa
+
+lexicon
+	0 class
+	1 def
+
+Example 2
+grammar
+	0
+		^ 
+		S 
+	1
+		S
+		'class' V
+	2
+		V
+		CV
+	3
+		V 
+		#
+	4
+		C
+		a
+	5
+		C 
+		b
+
+words
+	class ab
+
+lexicon
+	0 class
+	1 def
+
+Example 3
+grammar
+	0
+		^ 
+		S 
+	1
+		S
+		'class' V
+	2
+		V
+		&V
+	3
+		V 
+		#
+
+words
+	class abc
+
+lexicon
+	0 class
+	1 def
+
+Example 4
+grammar
+	0
+		^ 
+		S 
+	1
+		S
+		'class' @
+
+words
+	class abc
+
+lexicon
+	0 class
+	1 def
+
+Example 5
+grammar
+	0
+		^
+		S
+	1
+		S
+		D
+	2
+		D
+		'class' @: 'def' @(_@@_)
+	3
+		_@@_
+		@,_@@_
+	4
+		_@@_
+		#
+words
+	class report: def init(xs,ys,)
+lexicon
+
+Example 6
+grammar
+	0
+		^
+		S
+	1
+		S
+		B
+	2
+		B
+		'def' (_@@_)
+	3
+		_@@_
+		@,_@@_
+	4
+		_@@_
+		#
+words
+	def (x,s,)
+lexicon
+
+Example 7
+grammar
+	0
+		^
+		S
+	1
+		S
+		A B
+
+	2
+		A
+		class
+	3
+		B
+		report
+words
+	class report
+lexicon
+
+Example 8
+grammar
+	0
+		^
+		S
+	1
+		S
+		A V
+
+	2
+		A
+		class
+	3
+		V
+		&V
+	4
+		V
+		#
+words
+	class report
+lexicon
+	0 class
+
+Example 9
+grammar
+	0
+		^
+		S
+	1
+		S
+		A B
+
+	2
+		A
+		'class'
+	3
+		B
+		@
+words
+	class report
+lexicon
+
+Example 10
+grammar
+	0
+		^
+		S
+	1
+		S
+		A B
+
+	2
+		A
+		'class' @:
+	3
+		B
+		'def' @()
+words
+	class report: def init()
+lexicon
+
+Example 11
+grammar
+	0
+		^
+		S
+	1
+		S
+		AB
+
+	2
+		A
+		class
+	3
+		B
+		report
+	4
+		B
+		#
+words
+	class
+lexicon
+
+Example 12
+grammar
+	0
+		^
+		S
+	1
+		S
+		L @
+words
+	class report
+lexicon
+	0 class
+
+Example 13
+grammar
+	0
+		^
+		S
+	1
+		S
+		SS
+	2
+		S
+		a
+	3
+		S
+		#
+words
+	aa
+lexicon
+
+Example 14
+grammar
+	0
+		^
+		S
+	1
+		S
+		D
+	2
+		D
+		AA
+	3
+		A
+		a
+	4
+		A
+		B
+	5
+		B
+		b
+	6
+		B
+		#
+	7
+		C
+		a
+	8
+		C
+		B
+	9
+		A
+		C
+
+words
+	a
+lexicon
+
+Example 15
+grammar
+	0
+		^
+		S
+	1
+		S
+		(A)
+	2
+		A
+		(a(,a)*)?(,)?	
+
+words
+	(a,a,a)
+	
+lexicon
+
+Example 16
+grammar
+	0
+		^
+		S
+	1
+		S
+		A
+	3
+		A
+		(A)?
+	4
+		A
+		(A)*
+	5
+		A
+		a
+	6
+		A
+		AA
+	7
+		A
+		b
+	
+	
+
+words
+	(a(ba)*)?(b)?
+	
+lexicon
+
+Example 17
+grammar
+	0
+		^
+		S
+	1
+		S
+		A
+	2
+		A
+		A?
+	3
+		A
+		A*
+	4
+		A
+		AA
+	5
+		A
+		(A)
+	6	
+		A
+		@
+	7	
+		A
+		,
+	
+
+words
+	(a)?(b)?
+	
+lexicon
+
+Example 18
+grammar
+	0
+		^
+		S
+	1
+		S
+		(A)
+	2
+		A
+		(a(,a)*)?(,)?
+words
+	(a,a,a)
+	
+lexicon
+
+Example 19
+grammar
+	0
+		^
+		S
+	1
+		S
+		ABC
+	2
+		A
+		ab	
+	3
+		B
+		#
+	4
+		C
+		D
+	5
+		D
+		cd
+
+words
+	abcd
+	
+lexicon
+
+Example 20
+grammar
+	0
+		^
+		S
+	1
+		S
+		(a)?(b)*
+words
+	bbb
+	
+lexicon
+
+Example 21
+grammar
+	0
+		^
+		S
+	1
+		S
+		A
+	2
+		A
+		A*
+	5
+		B
+		@
+	6
+		B
+		,
+	8
+		A
+		AB
+	9
+		A
+		(A)
+	10
+		A
+		#
+
+		
+	
+
+words
+	(a)?(b)?
+lexicon
+
+
+Example 22
+grammar
+	0
+		^
+		A
+	1
+		A
+		AA
+	2
+		A
+		@
+	3
+		A
+		(A)
+	4
+		A
+		A*
+	5
+		A
+		A?
+	6
+		A
+		[$]
+	7
+		A
+		A A
+
+		
+	
+
+words
+	(a(,a)*)?(,)?
+lexicon
+
+precedence
+
+Example 23
+
+grammar
+	0
+		^
+		S
+	1
+		S
+		L @(A[,]B[,]C)
+	2
+		A
+		(@([,]@)*)?
+	3
+		B
+		([*]@)?
+	4
+		C
+		([**]@)?
+		
+		
+words
+	def __init__(xs,ys)
+
+precedence
+
+Example 24
+
+grammar
+	0
+		^
+		A
+	1
+		A
+		A A
+	2
+		A
+		(A)
+	3
+		A
+		B
+	4
+		B
+		$
+	5
+		A
+		AA
+	6
+		A
+		AB
+	7
+		A
+		BA
+
+		
+		
+words
+	def __init__(xs,ys)
+
+precedence
+
+Example 25
+
+grammar
+	0
+		^
+		D([*]@)?
+		
+words
+
+Example 26
+
+grammar
+	0
+		^
+		S
+	1
+		S
+		L @(ABC)
+	2
+		A
+		(@([,]@)*)?
+	3
+		B
+		D([*]@)?
+	4
+		C
+		D([**]@)?
+	5
+		D
+		([,])?
+		
+		
+words
+	def __init__(xs,ys)
+
+precedence
+
+Example 27
+
+grammar
+	0
+		^
+		(@([,]@)*)?
+
+	
+words
+	(xs,ys)
+
+precedence
+
+Example 28
+
+grammar
+	0
+		^
+		S
+	1
+		S
+		L @(ABC)
+	2
+		E
+		,
+	3
+		F
+		#
+	4
+		F
+		E@
+	5
+		F
+		FF
+	6
+		G
+		#
+	7
+		G
+		@F
+	8
+		A
+		G
+	9
+		H
+		*
+	10
+		I
+		#
+	11
+		I
+		H@
+	12
+		B
+		DI
+	13
+		J
+		**
+	14 
+		K
+		#
+	15
+		K
+		J@
+	16
+		C
+		DK
+	17
+		M
+		,
+	18
+		N
+		#
+	19
+		N
+		M
+	20
+		D
+		N
+
+words
+	def __init__(xs,ys)
+
+	
